@@ -1,10 +1,12 @@
 import express from 'express';
 import postsRoutes from './posts.route';
 import userRoutes from './user.route';
+import authenticationRoutes from './authentication.route';
 
 const api = express.Router();
 
 api.use('/users', userRoutes);
 api.use('/posts', postsRoutes);
+api.use('/authentication', authenticationRoutes);
 
 export default api;
