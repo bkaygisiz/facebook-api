@@ -17,6 +17,7 @@
     "babel-plugin-polyfill-corejs3": "^0.5.2",
     "babel-plugin-polyfill-regenerator": "^0.3.1",
     "balanced-match": "^1.0.2",
+    "bcrypt": "^5.0.1",
     "binary-extensions": "^2.2.0",
     "brace-expansion": "^1.1.11",
     "braces": "^3.0.2",
@@ -60,6 +61,7 @@
     "js-tokens": "^4.0.0",
     "jsesc": "^2.5.2",
     "json5": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
     "lodash.debounce": "^4.0.8",
     "make-dir": "^2.1.0",
     "minimatch": "^3.0.4",
@@ -99,6 +101,7 @@
     "unicode-match-property-ecmascript": "^2.0.0",
     "unicode-match-property-value-ecmascript": "^2.0.0",
     "unicode-property-aliases-ecmascript": "^2.0.0",
+    "uuid": "^8.3.2",
     "wrappy": "^1.0.2"
   },
   "scripts": {

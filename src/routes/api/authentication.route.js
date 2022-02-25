@@ -10,4 +10,8 @@ authentication.post('/register', (req, res) => {
     AuthController.register(req, res);
 })
 
+authentication.post('/login', (req, res) => {
+    AuthController.login(req, res);
+})
+
 module.exports = authentication;

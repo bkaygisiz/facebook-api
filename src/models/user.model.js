@@ -1,13 +1,23 @@
 import { PrismaClient } from '@prisma/client';
+
 const prisma = new PrismaClient();
 
-export const createOne = ({client, total, user, userId}) => {
-    return prisma.invoice.create({
+export const getProfile = (id) => {
+    return prisma.profile.findUnique({
+        where: {
+            userId: id
+        }
+    })
+}
+
+export const patchProfile = (id, firstName, lastName) => {
+    return prisma.profile.update({
+        where: {
+            userId: id
+        },
         data: {
-            client,
-            total,
-            user,
-            userId
+            firstName,
+            lastName
         }
     })
 }
