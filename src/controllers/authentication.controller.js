@@ -24,7 +24,7 @@ export const register = async (req, res) => {
                 userId: user.id
             }
         })
-        res.send(user);
+        res.status(201).send(user);
     }
 }
 
@@ -38,7 +38,6 @@ export const login = async (req, res) => {
             email: email
         }
     })
-
     if (!(user))
          res.status(404).send("User not found");
     else if (user.password !== password)
