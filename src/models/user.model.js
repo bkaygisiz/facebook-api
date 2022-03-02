@@ -42,7 +42,7 @@ export const deleteProfile = async (id) => {
             return(404);
         }
     }
-    prisma.user.delete({
+    await prisma.user.delete({
         where: {
             id: id
         }

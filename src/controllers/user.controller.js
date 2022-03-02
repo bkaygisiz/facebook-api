@@ -6,7 +6,7 @@ export const getProfile = async (req, res) => {
     if(!(id))
         res.status(400).send("Please give a user ID");
     else
-        res.status(200).send(await UserModel.getProfile(id));
+        res.send(await UserModel.getProfile(id));
 }
 
 export const patchProfile = async (req, res) => {
@@ -15,7 +15,7 @@ export const patchProfile = async (req, res) => {
     if(!(id))
         res.status(400).send("Please give a user ID");
     else
-        res.status(200).send(await UserModel.patchProfile(id, firstName, lastName));
+        res.send(await UserModel.patchProfile(id, firstName, lastName));
 }
 
 export const deleteProfile = async (req, res) => {
