@@ -10,7 +10,7 @@ export const createOne = async (id, message) => {
         }
     })
 
-    const updateAuthor = await prisma.user.update({
+    await prisma.user.update({
         where: {id},
         data: {
             Posts: {
@@ -20,7 +20,6 @@ export const createOne = async (id, message) => {
             } 
         }
     })
-    console.log(updateAuthor);
     return newPost;
 }
 
