@@ -22,5 +22,5 @@ export const getPost = async (req, res) => {
 export const getPosts = async (req, res) => {
     const token = req.header('authorization').split(' ')[1];
     const { id } = jwt.decode(token);
-    res.send(await PostsModel.getPosts(id));
+    res.status(200).send(await PostsModel.getPosts(id));
 }
