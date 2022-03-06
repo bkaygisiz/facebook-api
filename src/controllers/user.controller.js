@@ -1,5 +1,4 @@
 import * as UserModel from '../models/user.model'
-import jwt from "jsonwebtoken";
 
 export const getProfile = async (req, res) => {
     const id = req.params.id;
