@@ -5,5 +5,7 @@ import * as verificationMidlleware from "../../middlewares/verification.middlewa
 const posts = express.Router();
 
 posts.post('/', verificationMidlleware.simpleVerify, PostsController.createOne);
+posts.get('/:id', verificationMidlleware.simpleVerify, PostsController.getPost);
+posts.get('/', verificationMidlleware.simpleVerify, PostsController.getPosts);
 
 module.exports = posts;
