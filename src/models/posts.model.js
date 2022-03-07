@@ -24,9 +24,18 @@ export const createOne = async (id, message) => {
 }
 
 export const getPost = async(id) => {
-    return await prisma.post.findUnique({
-        where: { id: parseInt(id) }
-    })
+    try {
+        return await prisma.post.findUnique({
+            where: { 
+                id: parseInt(id)
+            }
+        })
+    } 
+    catch(e) {
+        if (e instanceof Prisma.PrismaClientKnownRequestError){
+            return(404);
+        }
+    }
 }
 
 export const getPosts = async(idUser) => {
@@ -36,4 +45,31 @@ export const getPosts = async(idUser) => {
             Posts: true
         }
     })
+}
+
+export const updatePost = async(idPost, message) => {
+    return await prisma.post.update({
+        where: {
+            id: parseInt(idPost)
+        },
+        data: {
+            message
+        }
+    })
+}
+
+export const deletePost = async(idPost) => {
+    try {
+        await prisma.post.delete({
+            where: {
+                id: parseInt(idPost)
+            }
+        })
+        return(200);
+    }
+    catch(e) {
+        if (e instanceof Prisma.PrismaClientKnownRequestError){
+            return(404);
+        }
+    }
 }

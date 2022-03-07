@@ -7,5 +7,7 @@ const posts = express.Router();
 posts.post('/', verificationMidlleware.simpleVerify, PostsController.createOne);
 posts.get('/:id', verificationMidlleware.simpleVerify, PostsController.getPost);
 posts.get('/', verificationMidlleware.simpleVerify, PostsController.getPosts);
+posts.patch('/:id', verificationMidlleware.simpleVerify, PostsController.updatePost);
+posts.delete('/:id', verificationMidlleware.simpleVerify, PostsController.deletePost);
 
 module.exports = posts;
